@@ -30,7 +30,7 @@ component output="false" displayname=""  {
 		VARIABLES.fw.service('userService.getUserCount','userCount');
 	}
 
-	public void function endSetup() {
+	public void function endSetup(required struct RC) {
 		if (RC.userCount > 0 || (structKeyExists(RC, "btnSave") && !structKeyExists(RC, "error"))) {
 			VARIABLES.fw.redirect('admin');
 		}
@@ -53,7 +53,7 @@ component output="false" displayname=""  {
 
 	}
 
-	public void function endEditSettings() {
+	public void function endEditSettings(required struct RC) {
 		if (structKeyExists(RC, "btnSaveSettings")) {
 			VARIABLES.fw.redirect('admin');
 		}

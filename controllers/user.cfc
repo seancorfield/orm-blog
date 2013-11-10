@@ -26,7 +26,7 @@ component output="false" displayname=""  {
 
 	}
 
-	public void function endEdit() {
+	public void function endEdit(required struct RC) {
 		if (structKeyExists(RC, "btnSaveUser")) {
 			VARIABLES.fw.redirect('user');
 		}
@@ -41,7 +41,7 @@ component output="false" displayname=""  {
 		}
 	}
 
-	public void function endSignin() {
+	public void function endSignin(required struct RC) {
 		// if (structKeyExists(RC, "btnSignin") && RC.user.getEmailAddress() == RC.emailAddress) {
 		// 	SESSION.userdata = RC.user.getProperties();
 		// 	// writeDump(var=SESSION,label="endSignin"); abort;
@@ -55,7 +55,7 @@ component output="false" displayname=""  {
 		VARIABLES.fw.service('securityService.signOutUser','isSignedIn');
 	}
 
-	public void function endSignOut() {
+	public void function endSignOut(required struct RC) {
 		VARIABLES.fw.redirect('');
 	}
 
