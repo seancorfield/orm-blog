@@ -28,8 +28,6 @@ component output="false" displayname=""  {
 		VARIABLES.fw.service('settingsService.getSettings','settings');
 		VARIABLES.fw.service('userService.getUser','user');
 		VARIABLES.fw.service('userService.getUserCount','userCount');
-
-
 	}
 
 	public void function endSetup() {
@@ -45,7 +43,6 @@ component output="false" displayname=""  {
 		RC.settingsId = RC.settings.getId();
 		RC.userId = RC.user.getId();
 	}
-
 
 	public void function editSettings(required struct RC) role="admin" {
 		if (structKeyExists(RC, "btnSaveSettings")) {
